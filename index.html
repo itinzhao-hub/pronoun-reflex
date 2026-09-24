@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#101318">
+  <title>Pronoun Cluster Reflex</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">French Auditory Reflex</div>
+        <h1>Pronoun Cluster Stripping</h1>
+      </div>
+      <button id="statsBtn" class="ghost-btn" type="button">统计</button>
+    </header>
+
+    <section id="setupView" class="panel">
+      <h2>本次训练</h2>
+      <p class="muted">选择要抽取的刺激组。可多选；选择会自动保存。</p>
+
+      <div class="toolbar">
+        <button id="selectAllBtn" type="button" class="small-btn">全选</button>
+        <button id="clearAllBtn" type="button" class="small-btn">清空</button>
+        <button id="restoreBtn" type="button" class="small-btn">上次选择</button>
+      </div>
+
+      <div id="moduleGrid" class="module-grid"></div>
+
+      <div class="setup-row">
+        <label for="sessionSize">本轮题数</label>
+        <select id="sessionSize">
+          <option value="20">20</option>
+          <option value="30">30</option>
+          <option value="50" selected>50</option>
+          <option value="100">100</option>
+          <option value="0">不限</option>
+        </select>
+      </div>
+
+      <div class="setup-row">
+        <span>音频变体</span>
+        <div class="variant-row" id="variantRow"></div>
+      </div>
+
+      <button id="startBtn" class="primary-btn" type="button">开始训练</button>
+      <div id="setupWarning" class="warning hidden"></div>
+    </section>
+
+    <section id="trainView" class="panel hidden">
+      <div class="progress-row">
+        <span id="progressText">1 / 50</span>
+        <span id="moduleBadge" class="badge"></span>
+      </div>
+
+      <div class="audio-stage">
+        <button id="replayBtn" class="replay-btn" type="button" aria-label="重播音频">▶</button>
+        <div id="audioStatus" class="muted small">播放中</div>
+      </div>
+
+      <div id="answers" class="answers"></div>
+
+      <div id="feedback" class="feedback hidden">
+        <div class="feedback-label">原文</div>
+        <div id="feedbackText" class="feedback-fr"></div>
+        <div class="feedback-label">正确答案</div>
+        <div id="feedbackAnswer" class="feedback-cn"></div>
+        <button id="nextBtn" class="primary-btn" type="button">下一题</button>
+      </div>
+
+      <div class="train-footer">
+        <button id="quitBtn" class="ghost-btn" type="button">结束本轮</button>
+      </div>
+    </section>
+
+    <section id="summaryView" class="panel hidden">
+      <h2>本轮完成</h2>
+      <div id="summaryStats" class="summary-grid"></div>
+      <button id="againBtn" class="primary-btn" type="button">再来一轮</button>
+    </section>
+
+    <dialog id="statsDialog">
+      <div class="dialog-head">
+        <h2>累计统计</h2>
+        <button id="closeStatsBtn" class="ghost-btn" type="button">关闭</button>
+      </div>
+      <div id="statsContent"></div>
+    </dialog>
+  </main>
+
+  <audio id="audioPlayer" preload="auto"></audio>
+
+  <script src="config.js"></script>
+  <script src="stimuli.js"></script>
+  <script src="db.js"></script>
+  <script src="app.js"></script>
+  <script src="pwa.js"></script>
+</body>
+</html>

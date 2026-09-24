@@ -1,0 +1,9 @@
+{
+  "name": "Pronoun Cluster Reflex",
+  "short_name": "Cluster Reflex",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0d1015",
+  "theme_color": "#101318",
+  "icons": []
+}
