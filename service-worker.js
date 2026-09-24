@@ -1,4 +1,4 @@
-const CACHE = "pronoun-cluster-reflex-v1.3";
+const CACHE = "pronoun-cluster-reflex-v1.4-flat-audio";
 const CORE = [
   "./","./index.html","./style.css","./config.js","./stimuli.js",
   "./db.js","./app.js","./pwa.js","./manifest.webmanifest"

@@ -94,7 +94,9 @@
   }
 
   function audioPath(stimulus, variant) {
-    return `${cfg.audioBase}${variant}/${stimulus.id}.mp3`;
+    // Audio files are flat in /audio:
+    // audio/PC_0001__female_fast.mp3
+    return `${cfg.audioBase}${stimulus.id}__${variant}.mp3`;
   }
 
   async function playCurrent() {
