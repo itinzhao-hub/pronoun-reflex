@@ -8,6 +8,7 @@
   const audioPlayer = $("audioPlayer");
 
   const moduleLabels = {
+    CLITIC_PARSER: "CLITIC_PARSER 预训练",
     SINGLE_CLITIC: "单代词",
     COD_CLUSTER: "COD 双代词组合",
     EN_CLUSTER: "EN 组合",
